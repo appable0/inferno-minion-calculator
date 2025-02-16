@@ -1,0 +1,110 @@
+body {
+    font-family: "Raleway", "Proxima Nova";
+    background-color: #1f1f1f;
+    color: #eeeeee
+}
+
+h1 {
+    text-align: center;
+    color: 	#FFAA00;
+}
+
+h2 {
+    text-align: center;
+}
+
+#main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#input {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1em;
+    padding: 1em;
+}
+
+.label, .input-label {
+    font-weight: 500;
+}
+
+
+
+#timeBetweenActions {
+    color: #55FF55;
+}
+
+.table-coin {
+    text-align: right;
+}
+
+.coin {
+    text-align: right;
+    color: #ffaa00;
+}
+
+table {
+    padding: 0em;
+    margin: 0em;
+    border-collapse: collapse;
+}
+
+.summary-coin {
+    font-weight: 700;
+}
+
+th {
+    font-weight: 700;
+    background-color: #111111
+}
+
+th, td {
+    padding: 0.5em 1em;
+    border: 1px solid #2f2f2f;
+}
+
+
+.table-num {
+    text-align: right;
+}
+
+.common {
+    color: #ffffff;
+  }
+  
+.uncommon {
+color: #55ff55;
+}
+
+.rare {
+color: #5555ff
+}
+
+.epic {
+color: #aa00aa
+}
+
+.legendary {
+color: #ffaa00
+}
+
+.texture {
+    font-size: 1em;
+    img {
+        margin-right: 0.2em;
+        vertical-align: -0.25em;
+        height: 1.2em;
+    }
+}
+
+@media (max-width:550px){
+	#profitTable td:nth-last-child(2) {
+        display: none;
+    }
+
+    #profitTable th:nth-last-child(2) {
+        display: none;
+    }
+}
