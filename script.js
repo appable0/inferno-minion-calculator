@@ -38,6 +38,7 @@ const inputElements = [
 inputElements.forEach((element) => {
   element.addEventListener("input", () => {
     console.log("Updating display due to input change.")
+    updateMainDisplay()
   });
 });
 
