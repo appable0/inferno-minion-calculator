@@ -121,7 +121,7 @@ class ItemRegistry {
     get(id) {
         const data = this.items[id]
         if (!data) return undefined
-        return new Item(id, data.name, data.rarity, `assets/${id}.gif`)
+        return new Item(id, data.name, data.rarity, `assets/${id.toLowerCase()}.gif`)
     }
 }
 
