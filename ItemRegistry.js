@@ -16,7 +16,7 @@ export const items = {
     rarity: "rare",
   },
   CRUDE_GABAGOOL_DISTILLATE: {
-    name: "Crude Gabagool Distillate",
+    name: "Gabagool Distillate",
     rarity: "rare",
   },
   FUEL_GABAGOOL: {
