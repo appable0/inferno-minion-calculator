@@ -32,13 +32,13 @@ const inputElements = [
   eyedropElement,
   bazaarMethodElement,
   craftSulphuricCoalElement,
-  displayTypeElement
+  displayTypeElement,
 ];
 
 inputElements.forEach((element) => {
   element.addEventListener("input", () => {
-    console.log("Updating display due to input change.")
-    updateMainDisplay()
+    console.log("Updating display due to input change.");
+    updateMainDisplay();
   });
 });
 
@@ -168,11 +168,10 @@ function calculateSetup(config) {
   const speedBonus = calculateSpeedBonus(config);
   const fuelBonus = calculateFuelMultiplier(config);
 
-  const minionMultiplier = config.displayType == "all" ? config.numMinions : 1
+  const minionMultiplier = config.displayType == "all" ? config.numMinions : 1;
 
   const cooldown = baseCooldown / ((1 + speedBonus) * (1 + fuelBonus));
-  let harvestsPerDay = 86400 / (2 * cooldown) * minionMultiplier;
-
+  let harvestsPerDay = (86400 / (2 * cooldown)) * minionMultiplier;
 
   const drops = calculateDropTable(config);
 
@@ -241,14 +240,16 @@ function formatCoins(number) {
 }
 
 function updateTable(data) {
+  const header =
+    data.displayType == "per" ? "Profit per Minion" : "Total Profit";
+  document.getElementById("profitTableHeader").textContent = header;
 
+  document.getElementById(
+    "timeBetweenActions"
+  ).textContent = `${data.cooldown.toLocaleString(undefined, {
+    maximumFractionDigits: 1,
+  })}s`;
 
-  const header = (data.displayType == "per") ? "Profit per Minion" : "Total Profit"
-  document.getElementById("profitTableHeader").textContent = header
-
-  document.getElementById("timeBetweenActions").textContent = `${data.cooldown.toLocaleString(undefined, { maximumFractionDigits: 1 })}s`
-
-  
   const revenueContainer = document.getElementById("revenue");
   const expensesContainer = document.getElementById("expenses");
   revenueContainer.innerHTML = "";
@@ -286,17 +287,18 @@ function updateTable(data) {
     );
   }
 
-  document.getElementById("totalRevenue").textContent =
-    formatCoins(data.totalRevenue);
+  document.getElementById("totalRevenue").textContent = formatCoins(
+    data.totalRevenue
+  );
   document.getElementById("totalExpenses").textContent =
     "\u{2212}" + formatCoins(data.totalExpenses);
-  document.getElementById("totalProfit").textContent =
-    formatCoins(data.totalProfit);
-
+  document.getElementById("totalProfit").textContent = formatCoins(
+    data.totalProfit
+  );
 }
 
 bazaar.onDataLoaded(() => {
-  console.log("Updating display due to Bazaar refresh.")
+  console.log("Updating display due to Bazaar refresh.");
   updateMainDisplay();
 });
 

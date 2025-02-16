@@ -5,142 +5,151 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inferno Minion Profit Calculator</title>
     <script src="script.js" type="module" defer></script>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <h1>Inferno Minion Profit Calculator</h1>
-
     <div id="main">
-        <div id="inputSection">
-            <h2>Input</h2>
-            <form id="input">
-                <label class="input-label" for="minionTier">Minion Tier:</label>
-                <select id="minionTier">
-                  <option value="1">Tier 1</option>
-                  <option value="2">Tier 2</option>
-                  <option value="3">Tier 3</option>
-                  <option value="4">Tier 4</option>
-                  <option value="5">Tier 5</option>
-                  <option value="6">Tier 6</option>
-                  <option value="7">Tier 7</option>
-                  <option value="8">Tier 8</option>
-                  <option value="9">Tier 9</option>
-                  <option value="10">Tier 10</option>
-                  <option value="11">Tier 11</option>
-                </select>
-          
-                <label class="input-label" for="numMinions">Number of Inferno Minions:</label>
-                <input type="number" id="numMinions" min="1" max="31" value="1" />
-          
-                <label class="input-label" for="fuelType">Fuel Type:</label>
-                <select id="fuelType">
-                  <option value="rare">Rare</option>
-                  <option value="epic">Epic</option>
-                  <option value="legendary">Legendary</option>
-                </select>
-          
-                
-          
-                <label class="input-label" for="slot1">Slot 1 Upgrade:</label>
-                <select id="slot1">
-                  <option value="none">None</option>
-                  <option value="flycatcher">Flycatcher</option>
-                  <option value="expander">Expander</option>
-                </select>
-          
-                <label class="input-label" for="slot2">Slot 2 Upgrade:</label>
-                <select id="slot2">
-                  <option value="none">None</option>
-                  <option value="flycatcher">Flycatcher</option>
-                  <option value="expander">Expander</option>
-                </select>
+      <div id="inputSection">
+        <h2>Input</h2>
+        <form id="input">
+          <label class="input-label" for="minionTier">Minion Tier</label>
+          <select id="minionTier">
+            <option value="1">Tier 1</option>
+            <option value="2">Tier 2</option>
+            <option value="3">Tier 3</option>
+            <option value="4">Tier 4</option>
+            <option value="5">Tier 5</option>
+            <option value="6">Tier 6</option>
+            <option value="7">Tier 7</option>
+            <option value="8">Tier 8</option>
+            <option value="9">Tier 9</option>
+            <option value="10">Tier 10</option>
+            <option value="11">Tier 11</option>
+          </select>
 
-                 <!-- External Upgrades -->
-                 <label class="input-label" for="beacon">Beacon Level:</label>
-                 <select id="beacon">
-                   <option value="0">None</option>
-                   <option value="1">Beacon 1</option>
-                   <option value="2">Beacon 2</option>
-                   <option value="3">Beacon 3</option>
-                   <option value="4">Beacon 4</option>
-                   <option value="5">Beacon 5</option>
-                 </select>
+          <label class="input-label" for="numMinions">Minion Count</label>
+          <input type="number" id="numMinions" min="1" max="31" value="1" />
 
-                <label class="input-label" for="eyedrop">Capsaicin Eyedrop</label>
-                <input type="checkbox" id="eyedrop" />
-          
-                <label class="input-label" for="scorchedCrystal">Scorched Power Crystal</label>
-                <input type="checkbox" id="scorchedCrystal" />
-              
-                <label class="input-label" for="postcard">Postcard</label>
-                <input type="checkbox" id="postcard" />
-                <label class="input-label" for="mithrilInfusion">Mithril Infusion</label>
-                <input type="checkbox" id="mithrilInfusion" />
-                <label class="input-label" for="freeWill">Free Will</label>
-                <input type="checkbox" id="freeWill" />
+          <label class="input-label" for="fuelType">Fuel Rarity</label>
+          <select id="fuelType">
+            <option value="rare">Rare</option>
+            <option value="epic">Epic</option>
+            <option value="legendary">Legendary</option>
+          </select>
 
-                <label class="input-label" for="craftSulphuricCoal">Craft Sulphuric Coal</label>
-                <input type="checkbox" id="craftSulphuricCoal" />
+          <label class="input-label" for="slot1">Slot 1</label>
+          <select id="slot1">
+            <option value="none">None</option>
+            <option value="flycatcher">Flycatcher</option>
+            <option value="expander">Expander</option>
+          </select>
 
-                <label class="input-label" for="bazaarMethod">Bazaar Method:</label>
-                <select id="bazaarMethod">
-                  <option value="insta">Insta</option>
-                  <option value="offers">Offers</option>
-                </select>      
-          
-                
-          
-                <label for="displayType">Display Type</label>
-                <select id="displayType">
-                  <option value="per">Per Minion</option>
-                  <option value="all">All Minions</option>
-                </select>  
-              </form>
-          
-        </div>
-    
-    <div id="results">
+          <label class="input-label" for="slot2">Slot 2</label>
+          <select id="slot2">
+            <option value="none">None</option>
+            <option value="flycatcher">Flycatcher</option>
+            <option value="expander">Expander</option>
+          </select>
+
+          <label class="input-label" for="eyedrop">Capsaicin Eyedrop</label>
+          <input type="checkbox" id="eyedrop" />
+
+          <label class="input-label" for="beacon">Beacon</label>
+          <select id="beacon">
+            <option value="0">None</option>
+            <option value="1">Beacon 1</option>
+            <option value="2">Beacon 2</option>
+            <option value="3">Beacon 3</option>
+            <option value="4">Beacon 4</option>
+            <option value="5">Beacon 5</option>
+          </select>
+
+          <label class="input-label" for="scorchedCrystal"
+            >Scorched Crystal</label
+          >
+          <input type="checkbox" id="scorchedCrystal" />
+
+          <label class="input-label" for="postcard">Postcard</label>
+          <input type="checkbox" id="postcard" />
+          <label class="input-label" for="mithrilInfusion"
+            >Mithril Infusion</label
+          >
+          <input type="checkbox" id="mithrilInfusion" />
+          <label class="input-label" for="freeWill">Free Will</label>
+          <input type="checkbox" id="freeWill" />
+
+          <label class="input-label" for="craftSulphuricCoal"
+            >Craft Sulphuric Coal</label
+          >
+          <input type="checkbox" id="craftSulphuricCoal" />
+
+          <label class="input-label" for="bazaarMethod">Bazaar Method</label>
+          <select id="bazaarMethod">
+            <option value="insta">Insta</option>
+            <option value="offers">Offers</option>
+          </select>
+
+          <label class="input-label" for="displayType">Display Type</label>
+          <select id="displayType">
+            <option value="per">Per Minion</option>
+            <option value="all">All Minions</option>
+          </select>
+        </form>
+      </div>
+
+      <div id="results">
         <h2 id="profitTableHeader">Profit</h2>
-        <p class="label">Time between actions: <span id="timeBetweenActions"></span></p>
-      <table id="profitTable">
-        <thead><tr>
-            <th>Item</th>
-            <th>Amount</th>
-            <th>Unit Price</th>
-            <th>Revenue</th>
-          </tr></thead>
-            
-            <tbody id="revenue"></tbody>
+        <p class="label">
+          Time between actions: <span id="timeBetweenActions"></span>
+        </p>
+        <table id="profitTable">
+          <thead>
             <tr>
+              <th>Item</th>
+              <th>Amount</th>
+              <th>Unit Price</th>
+              <th>Revenue</th>
+            </tr>
+          </thead>
+
+          <tbody id="revenue"></tbody>
+          <tr>
             <td>Total Revenue</td>
-            <td></td><td></td>
+            <td></td>
+            <td></td>
             <td class="coin table-coin" id="totalRevenue"></td>
-            </tr>
-            <thead>
-                <tr>
-                    <th>Item</th>
-                    <th>Amount</th>
-                    <th>Unit Price</th>
-                    <th>Coins</th>
-                  </tr>
-            </thead>
-            
-            <tbody id="expenses"></tbody>
+          </tr>
+          <thead>
             <tr>
+              <th>Item</th>
+              <th>Amount</th>
+              <th>Unit Price</th>
+              <th>Coins</th>
+            </tr>
+          </thead>
+
+          <tbody id="expenses"></tbody>
+          <tr>
             <td>Total Expenses</td>
-            <td></td><td></td>
+            <td></td>
+            <td></td>
             <td class="coin table-coin" id="totalExpenses"></td>
-            </tr>
-        <tfoot>
+          </tr>
+          <tfoot>
             <tr>
-                <td>Total Profit</td>
-                <td></td><td></td>
-                <td class="coin table-coin summary-coin" id="totalProfit"></td>
-              </tr>
-        </tfoot>
-      </table>
-    </div>
+              <td>Total Profit</td>
+              <td></td>
+              <td></td>
+              <td class="coin table-coin summary-coin" id="totalProfit"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
     </div>
   </body>
 </html>
