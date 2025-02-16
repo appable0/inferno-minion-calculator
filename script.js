@@ -354,7 +354,7 @@ function calculateFuelMaterials(config) {
   }
 
   if (config.eyedrop) {
-    materials.push({ item: "CAPSAICIN_EYEDROPS_NO_CHARGES", amount: 0.5 });
+    materials.push({ item: "CAPSAICIN_EYEDROPS_NO_CHARGES", amount: 1 });
   }
 
   return materials;
